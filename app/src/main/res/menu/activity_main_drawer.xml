@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_myprofile"
+            android:icon="@drawable/user_profileicon"
+            android:title="My Profile" />
+        <item
+            android:id="@+id/nav_activities"
+            android:icon="@drawable/icon_activity"
+            android:title="Activities" />
+        <item
+            android:id="@+id/nav_gears"
+            android:icon="@drawable/icon_gear"
+            android:title="Gears" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@drawable/icon_gallery"
+            android:title="Videos Gallery" />
+        <item
+            android:id="@+id/nav_connection"
+            android:icon="@drawable/icon_connection"
+            android:title="Connections" />
+        <item
+            android:id="@+id/nav_challenges"
+            android:icon="@drawable/icon_challenges"
+            android:title="Challenges" />
+        <item
+            android:id="@+id/nav_setting"
+            android:icon="@drawable/icon_settings"
+            android:title="Setting" />
+        <item
+            android:id="@+id/nav_notification"
+            android:icon="@drawable/icon_notification"
+            android:title="Notification" />
+        <item
+            android:id="@+id/nav_support"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:title="Support" />
+    </group>
+</menu>

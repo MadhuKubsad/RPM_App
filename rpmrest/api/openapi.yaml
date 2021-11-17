@@ -1,0 +1,3022 @@
+openapi: 3.0.1
+info:
+  contact:
+    email: karthikchiru@gmail.com
+    name: Karthik C N
+  description: RPM Mobile
+  termsOfService: http://Rpm.com
+  title: RPM Mobile
+  version: Phase 1
+servers:
+- url: /
+paths:
+  /api/Account/Login:
+    put:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/LoginModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/LoginModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/LoginModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+          description: Success
+      tags:
+      - Account
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/Account/Register:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/RegisterModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegisterModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/RegisterModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/RegisterModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+      tags:
+      - Account
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/Account/ResetPassword:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ResetPasswordModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+      tags:
+      - Account
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/Account/RefreshToken:
+    put:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/refreshTokenModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/refreshTokenModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/refreshTokenModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/refreshTokenModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponseServiceResponse'
+          description: Success
+      tags:
+      - Account
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/Account/ForgotPassword:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/getemail'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/getemail'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/getemail'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/getemail'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+      tags:
+      - Account
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/Data/TotalAdminUserCount:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - Data
+      x-accepts: application/json
+  /api/Data/TotalGroupAdminUserCount:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserCountModel'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - Data
+      x-accepts: application/json
+  /api/DropDown/GetCountry:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CountryModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CountryModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CountryModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetProvinceState:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: id
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ProvinceStateModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ProvinceStateModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ProvinceStateModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetCity:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: id
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CityModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CityModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/CityModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetThemes:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ThemesModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ThemesModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ThemesModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetLanguage:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/LanguageModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/LanguageModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/LanguageModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetEventFrequencyMaster:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EventFrequencyMasterModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EventFrequencyMasterModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/EventFrequencyMasterModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetAllGearBrand:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetAllMeasureWeight:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetAllMeasureHeight:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/DropDown/GetAllMeasureDistance:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+          description: Success
+      tags:
+      - DropDown
+      x-accepts: application/json
+  /api/MobileAccessories/GetUserProfile:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/UserResponseModel'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponseModel'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/UserResponseModel'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/UpdateUserProfile:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UserRequestModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UserRequestModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UserRequestModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/AddProfilePhoto:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ProfilePhotoModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/AddHeightandWeight:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddUserHeightModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddUserHeightModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddUserHeightModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddUserHeightModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetGearDetailsByBrandId/{id}:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: brandId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - explode: false
+        in: path
+        name: id
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetGrearDetailsModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetGrearDetailsModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetGrearDetailsModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetAllGearBrand:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/GetGrearBrandModelListApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/UpdateRetireGear:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: gearId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/AddGearDetails:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/UserGearModel'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/UserGearModel'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/UserGearModel'
+              type: array
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/UserGearModel'
+              type: array
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetMyCurrentGearlist:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetMyCurrentGearById:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: usergearId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetUserGearModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/UserChangePassword:
+    patch:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/ChangePasswordModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetGroupUserDetailsByInviteCode:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: inviteCode
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GroupAdminUserAdmin'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GroupAdminUserAdmin'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GroupAdminUserAdmin'
+                type: array
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/SetUserPassword:
+    patch:
+      parameters:
+      - explode: true
+        in: query
+        name: Password
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: InviteCode
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetQueryMaster:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/QueryMasterModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/QueryMasterModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/QueryMasterModel'
+                type: array
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/AddUserQueryDetails:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddQueryDetailsModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddQueryDetailsModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddQueryDetailsModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddQueryDetailsModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetAllMeasureWeight:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/WeightModel'
+                type: array
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetAllMeasureHeight:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/HeightModel'
+                type: array
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetAllMeasureDistance:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/DistanceModel'
+                type: array
+          description: Success
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/CreateChallenge:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/EditChallenge:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddChallengeModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/LeaveChallenge:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: statusId
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetMylistOfChallenge:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/AddListInviteFriends:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ParticipantsdetailsModel'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ParticipantsdetailsModel'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ParticipantsdetailsModel'
+              type: array
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/ParticipantsdetailsModel'
+              type: array
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetAllChallengeStatus:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ChallengeStatusModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ChallengeStatusModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ChallengeStatusModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetMylistOfCompletedChallenge:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetMyChallengeModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetListNormalUser:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetListGroupUser:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ListUserModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/CreateEvent:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddEventModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddEventModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddEventModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddEventModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/EditEvent:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/UpdateEventModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEventModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/UpdateEventModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/UpdateEventModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/DeleteEvent:
+    delete:
+      parameters:
+      - explode: true
+        in: query
+        name: eventDate
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: eventId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetEventDetails:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: eventDate
+        required: false
+        schema:
+          format: date-time
+          type: string
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetEventdetailsModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetEventdetailsModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetEventdetailsModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/GetlistSongsDetails:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UpdateSongsModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UpdateSongsModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/UpdateSongsModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/AddPlaylist:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/AddPlaylistModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AddPlaylistModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AddPlaylistModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AddPlaylistModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetMyPlaylist:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetPlaylistModel'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetPlaylistModel'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetPlaylistModel'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/EditMyPlaylistName:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              $ref: '#/components/schemas/GetPlaylistModel'
+          application/json:
+            schema:
+              $ref: '#/components/schemas/GetPlaylistModel'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/GetPlaylistModel'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/GetPlaylistModel'
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetPlaylistSongs:
+    get:
+      parameters:
+      - explode: true
+        in: query
+        name: playlistId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/SetPlaylistSongFavourite:
+    post:
+      parameters:
+      - explode: true
+        in: query
+        name: playlistSongId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/StringServiceResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StringServiceResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/StringServiceResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/DeletePlaylistSongs:
+    delete:
+      parameters:
+      - explode: true
+        in: query
+        name: playListId
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+  /api/MobileAccessories/AddFavouriteSongs:
+    post:
+      requestBody:
+        content:
+          application/json-patch+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AddFavouriteSongsModel'
+              type: array
+          application/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AddFavouriteSongsModel'
+              type: array
+          text/json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AddFavouriteSongsModel'
+              type: array
+          application/*+json:
+            schema:
+              items:
+                $ref: '#/components/schemas/AddFavouriteSongsModel'
+              type: array
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-contentType: application/json-patch+json
+      x-accepts: application/json
+  /api/MobileAccessories/GetlistfavoriteSongs:
+    get:
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+            text/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/GetAllSongs'
+                type: array
+          description: Success
+        "401":
+          description: Unauthorized
+        "403":
+          description: Forbidden
+      security:
+      - bearer: []
+      tags:
+      - MobileAccessories
+      x-accepts: application/json
+components:
+  schemas:
+    AddChallengeModel:
+      additionalProperties: false
+      example:
+        challengeStartTime: 2000-01-23T04:56:07.000+00:00
+        distance: 0.8008281904610115
+        distanceMeasurementId: 6
+        challengeEndTime: 2000-01-23T04:56:07.000+00:00
+        challengeName: challengeName
+        eventType: true
+        themesId: 1
+        challengeStatus: 5
+        challengeDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        challengeName:
+          nullable: true
+          type: string
+        distance:
+          format: double
+          type: number
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        challengeStartTime:
+          format: date-time
+          type: string
+        challengeEndTime:
+          format: date-time
+          type: string
+        challengeDate:
+          format: date-time
+          type: string
+        themesId:
+          format: int64
+          type: integer
+        challengeStatus:
+          format: int32
+          type: integer
+        eventType:
+          type: boolean
+      type: object
+    AddEventModel:
+      additionalProperties: false
+      example:
+        eventEndDate: 2000-01-23T04:56:07.000+00:00
+        distance: 0.8008281904610115
+        distanceMeasurementId: 6
+        eventEndTime: 2000-01-23T04:56:07.000+00:00
+        eventName: eventName
+        eventStartTime: 2000-01-23T04:56:07.000+00:00
+        eventStartDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        eventName:
+          nullable: true
+          type: string
+        distance:
+          format: double
+          type: number
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        eventStartTime:
+          format: date-time
+          type: string
+        eventEndTime:
+          format: date-time
+          type: string
+        eventStartDate:
+          format: date-time
+          type: string
+        eventEndDate:
+          format: date-time
+          type: string
+      type: object
+    AddFavouriteSongsModel:
+      additionalProperties: false
+      example:
+        songId: 0
+      properties:
+        songId:
+          format: int64
+          type: integer
+      type: object
+    AddPlaylistModel:
+      additionalProperties: false
+      example:
+        playListName: playListName
+        songId:
+        - 0
+        - 0
+      properties:
+        playListName:
+          nullable: true
+          type: string
+        songId:
+          items:
+            format: int32
+            type: integer
+          nullable: true
+          type: array
+      type: object
+    AddQueryDetailsModel:
+      additionalProperties: false
+      example:
+        queryMessage: queryMessage
+        queryId: 0
+      properties:
+        queryId:
+          format: int64
+          type: integer
+        queryMessage:
+          nullable: true
+          type: string
+      type: object
+    AddUserHeightModel:
+      additionalProperties: false
+      example:
+        weightMeasurementId: 6
+        weight: 1.4658129805029452
+        heightMeasurementId: 5
+        height: 0.8008281904610115
+      properties:
+        height:
+          format: double
+          nullable: true
+          type: number
+        weightMeasurementId:
+          format: int64
+          nullable: true
+          type: integer
+        weight:
+          format: double
+          nullable: true
+          type: number
+        heightMeasurementId:
+          format: int64
+          nullable: true
+          type: integer
+      type: object
+    ApiResponse:
+      additionalProperties: false
+      example:
+        message: message
+        statusCode: 0
+      properties:
+        message:
+          nullable: true
+          type: string
+        statusCode:
+          format: int64
+          type: integer
+      type: object
+    ChallengeStatusModel:
+      additionalProperties: false
+      example:
+        id: 0
+        challengeStatus: challengeStatus
+      properties:
+        id:
+          format: int64
+          type: integer
+        challengeStatus:
+          nullable: true
+          type: string
+      type: object
+    ChangePasswordModel:
+      additionalProperties: false
+      example:
+        oldPassword: oldPassword
+        newPassword: newPassword
+      properties:
+        newPassword:
+          nullable: true
+          type: string
+        oldPassword:
+          nullable: true
+          type: string
+      type: object
+    CityModel:
+      additionalProperties: false
+      example:
+        cityName: cityName
+        cityId: 0
+      properties:
+        cityId:
+          format: int64
+          type: integer
+        cityName:
+          nullable: true
+          type: string
+      type: object
+    CountryModel:
+      additionalProperties: false
+      example:
+        country: country
+        id: 0
+      properties:
+        id:
+          format: int64
+          type: integer
+        country:
+          nullable: true
+          type: string
+      type: object
+    DistanceModel:
+      additionalProperties: false
+      example:
+        id: 0
+        distanceMeasurementName: distanceMeasurementName
+      properties:
+        id:
+          format: int64
+          type: integer
+        distanceMeasurementName:
+          nullable: true
+          type: string
+      type: object
+    EventFrequencyMasterModel:
+      additionalProperties: false
+      example:
+        frequencyId: 0
+        frequencyName: frequencyName
+      properties:
+        frequencyId:
+          format: int64
+          type: integer
+        frequencyName:
+          nullable: true
+          type: string
+      type: object
+    GetAllSongs:
+      additionalProperties: false
+      example:
+        songLink: songLink
+        duration: duration
+        createdDate: 2000-01-23T04:56:07.000+00:00
+        size: size
+        artist: artist
+        title: title
+        songId: 0
+      properties:
+        songId:
+          format: int64
+          type: integer
+        songLink:
+          nullable: true
+          type: string
+        title:
+          nullable: true
+          type: string
+        artist:
+          nullable: true
+          type: string
+        duration:
+          nullable: true
+          type: string
+        size:
+          nullable: true
+          type: string
+        createdDate:
+          format: date-time
+          type: string
+      type: object
+    getemail:
+      additionalProperties: false
+      properties:
+        email:
+          nullable: true
+          type: string
+      type: object
+    GetEventdetailsModel:
+      additionalProperties: false
+      example:
+        duration: duration
+        eventId: 0
+        eventEndDate: 2000-01-23T04:56:07.000+00:00
+        distance: 6.027456183070403
+        distanceMeasurementId: 1
+        eventEndTime: 2000-01-23T04:56:07.000+00:00
+        eventName: eventName
+        eventStartTime: 2000-01-23T04:56:07.000+00:00
+        eventStartDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        eventId:
+          format: int64
+          type: integer
+        eventName:
+          nullable: true
+          type: string
+        distance:
+          format: double
+          type: number
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        eventStartTime:
+          format: date-time
+          type: string
+        eventEndTime:
+          format: date-time
+          type: string
+        eventStartDate:
+          format: date-time
+          type: string
+        eventEndDate:
+          format: date-time
+          type: string
+        duration:
+          nullable: true
+          type: string
+      type: object
+    GetGrearBrandModel:
+      additionalProperties: false
+      example:
+        id: 6
+        brand: brand
+      properties:
+        id:
+          format: int64
+          type: integer
+        brand:
+          nullable: true
+          type: string
+      type: object
+    GetGrearBrandModelListApiResponse:
+      additionalProperties: false
+      example:
+        data:
+        - id: 6
+          brand: brand
+        - id: 6
+          brand: brand
+        message: message
+        statusCode: 0
+      properties:
+        message:
+          nullable: true
+          type: string
+        statusCode:
+          format: int64
+          type: integer
+        data:
+          items:
+            $ref: '#/components/schemas/GetGrearBrandModel'
+          nullable: true
+          type: array
+      type: object
+    GetGrearDetailsModel:
+      additionalProperties: false
+      example:
+        brandName: brandName
+        gearName: gearName
+        brandId: 6
+        id: 0
+        gearDesc: gearDesc
+        gearBrandId: 1
+        gearPhoto: gearPhoto
+      properties:
+        id:
+          format: int64
+          type: integer
+        brandName:
+          nullable: true
+          type: string
+        brandId:
+          format: int64
+          type: integer
+        gearName:
+          nullable: true
+          type: string
+        gearPhoto:
+          nullable: true
+          type: string
+        gearBrandId:
+          format: int64
+          type: integer
+        gearDesc:
+          nullable: true
+          type: string
+      type: object
+    GetMyChallengeModel:
+      additionalProperties: false
+      example:
+        remainingDate: 2
+        distance: 6.027456183070403
+        totalParticipantsCount: 7
+        challengeEndTime: 2000-01-23T04:56:07.000+00:00
+        eventType: true
+        challengeId: 0
+        themeName: themeName
+        challengeStartTime: 2000-01-23T04:56:07.000+00:00
+        distanceMeasurementId: 1
+        challengeName: challengeName
+        themesId: 5
+        challengeStatus: 5
+        challengeDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        challengeId:
+          format: int64
+          type: integer
+        challengeName:
+          nullable: true
+          type: string
+        distance:
+          format: double
+          type: number
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        challengeStartTime:
+          format: date-time
+          type: string
+        challengeEndTime:
+          format: date-time
+          type: string
+        challengeDate:
+          format: date-time
+          type: string
+        themesId:
+          format: int64
+          type: integer
+        themeName:
+          nullable: true
+          type: string
+        challengeStatus:
+          format: int32
+          type: integer
+        eventType:
+          type: boolean
+        remainingDate:
+          format: int32
+          type: integer
+        totalParticipantsCount:
+          format: int64
+          type: integer
+      type: object
+    GetPlaylistModel:
+      additionalProperties: false
+      example:
+        playListName: playListName
+        playListId: 0
+      properties:
+        playListId:
+          format: int64
+          type: integer
+        playListName:
+          nullable: true
+          type: string
+      type: object
+    GetUserGearModel:
+      additionalProperties: false
+      example:
+        distanceMeasurementId: 1
+        nickname: nickname
+        maxDistance: 6
+        isRetired: true
+        gearId: 5
+        id: 0
+        startDate: 2000-01-23T04:56:07.000+00:00
+        isWalking: true
+      properties:
+        id:
+          format: int64
+          type: integer
+        nickname:
+          nullable: true
+          type: string
+        maxDistance:
+          format: int64
+          type: integer
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        isRetired:
+          type: boolean
+        startDate:
+          format: date-time
+          type: string
+        gearId:
+          format: int64
+          type: integer
+        isWalking:
+          type: boolean
+      type: object
+    GroupAdminUserAdmin:
+      additionalProperties: false
+      example:
+        lastName: lastName
+        gender: gender
+        languageId: 5
+        fullName: fullName
+        dateOfBirth: 2000-01-23T04:56:07.000+00:00
+        cityId: 1
+        countryID: 6
+        provinceStateName: provinceStateName
+        firstName: firstName
+        groupName: groupName
+        cityName: cityName
+        contactNumber: contactNumber
+        countryName: countryName
+        email: email
+        age: 0
+        provinceStateId: 5
+      properties:
+        email:
+          nullable: true
+          type: string
+        dateOfBirth:
+          format: date-time
+          type: string
+        firstName:
+          nullable: true
+          type: string
+        lastName:
+          nullable: true
+          type: string
+        fullName:
+          nullable: true
+          type: string
+        contactNumber:
+          nullable: true
+          type: string
+        age:
+          format: int64
+          type: integer
+        gender:
+          nullable: true
+          type: string
+        groupName:
+          nullable: true
+          type: string
+        countryID:
+          format: int64
+          type: integer
+        countryName:
+          nullable: true
+          type: string
+        cityId:
+          format: int64
+          type: integer
+        cityName:
+          nullable: true
+          type: string
+        provinceStateId:
+          format: int64
+          type: integer
+        provinceStateName:
+          nullable: true
+          type: string
+        languageId:
+          format: int64
+          type: integer
+      type: object
+    HeightModel:
+      additionalProperties: false
+      example:
+        unit: unit
+        heightMeasurementName: heightMeasurementName
+        id: 0
+      properties:
+        id:
+          format: int64
+          type: integer
+        heightMeasurementName:
+          nullable: true
+          type: string
+        unit:
+          nullable: true
+          type: string
+      type: object
+    LanguageModel:
+      additionalProperties: false
+      example:
+        id: 0
+        languageName: languageName
+      properties:
+        id:
+          format: int64
+          type: integer
+        languageName:
+          nullable: true
+          type: string
+      type: object
+    ListUserModel:
+      additionalProperties: false
+      example:
+        inviteUserEmailId: inviteUserEmailId
+        inviteUsercontactNumber: inviteUsercontactNumber
+        inviteUserId: 0
+        inviteUserName: inviteUserName
+      properties:
+        inviteUserId:
+          format: int64
+          type: integer
+        inviteUserName:
+          nullable: true
+          type: string
+        inviteUsercontactNumber:
+          nullable: true
+          type: string
+        inviteUserEmailId:
+          nullable: true
+          type: string
+      type: object
+    LoginModel:
+      additionalProperties: false
+      example:
+        password: password
+        email: email
+      properties:
+        email:
+          nullable: true
+          type: string
+        password:
+          nullable: true
+          type: string
+      type: object
+    LoginResponse:
+      additionalProperties: false
+      example:
+        expiresIn: 6
+        roles:
+        - roles
+        - roles
+        userEmail: userEmail
+        accessToken: accessToken
+        tokenType: tokenType
+        refreshToken: refreshToken
+        username: username
+      properties:
+        accessToken:
+          nullable: true
+          type: string
+        expiresIn:
+          format: int32
+          type: integer
+        refreshToken:
+          nullable: true
+          type: string
+        roles:
+          items:
+            type: string
+          nullable: true
+          type: array
+        tokenType:
+          nullable: true
+          type: string
+        username:
+          nullable: true
+          type: string
+        userEmail:
+          nullable: true
+          type: string
+      type: object
+    LoginResponseServiceResponse:
+      additionalProperties: false
+      example:
+        data:
+          expiresIn: 6
+          roles:
+          - roles
+          - roles
+          userEmail: userEmail
+          accessToken: accessToken
+          tokenType: tokenType
+          refreshToken: refreshToken
+          username: username
+        message: message
+        statusCode: 0
+      properties:
+        message:
+          nullable: true
+          type: string
+        statusCode:
+          format: int64
+          type: integer
+        data:
+          $ref: '#/components/schemas/LoginResponse'
+      type: object
+    ParticipantsdetailsModel:
+      additionalProperties: false
+      example:
+        inviteUserEmailId: inviteUserEmailId
+        challengeId: 0
+        inviteUsercontactNumber: inviteUsercontactNumber
+        userId: 6
+        inviteUserName: inviteUserName
+      properties:
+        challengeId:
+          format: int64
+          type: integer
+        userId:
+          format: int64
+          type: integer
+        inviteUserName:
+          nullable: true
+          type: string
+        inviteUsercontactNumber:
+          nullable: true
+          type: string
+        inviteUserEmailId:
+          nullable: true
+          type: string
+      type: object
+    ProfilePhotoModel:
+      additionalProperties: false
+      example:
+        photoPath: photoPath
+      properties:
+        photoPath:
+          nullable: true
+          type: string
+      type: object
+    ProvinceStateModel:
+      additionalProperties: false
+      example:
+        provinceStateName: provinceStateName
+        provinceStateId: 0
+      properties:
+        provinceStateId:
+          format: int64
+          type: integer
+        provinceStateName:
+          nullable: true
+          type: string
+      type: object
+    QueryMasterModel:
+      additionalProperties: false
+      example:
+        queryName: queryName
+        queryId: 0
+      properties:
+        queryId:
+          format: int64
+          type: integer
+        queryName:
+          nullable: true
+          type: string
+      type: object
+    refreshTokenModel:
+      additionalProperties: false
+      properties:
+        refreshToken:
+          nullable: true
+          type: string
+      type: object
+    RegisterModel:
+      additionalProperties: false
+      example:
+        firstName: firstName
+        lastName: lastName
+        password: password
+        gender: gender
+        roleId: 5
+        contactNumber: contactNumber
+        languageId: 5
+        dateOfBirth: 2000-01-23T04:56:07.000+00:00
+        cityId: 0
+        email: email
+        provinceStateId: 6
+        countryID: 1
+      properties:
+        firstName:
+          nullable: true
+          type: string
+        lastName:
+          nullable: true
+          type: string
+        email:
+          nullable: true
+          type: string
+        password:
+          nullable: true
+          type: string
+        contactNumber:
+          nullable: true
+          type: string
+        gender:
+          nullable: true
+          type: string
+        cityId:
+          format: int64
+          type: integer
+        provinceStateId:
+          format: int64
+          type: integer
+        countryID:
+          format: int64
+          type: integer
+        languageId:
+          format: int64
+          type: integer
+        dateOfBirth:
+          format: date-time
+          type: string
+        roleId:
+          format: int32
+          type: integer
+      type: object
+    ResetPasswordModel:
+      additionalProperties: false
+      example:
+        password: password
+        email: email
+        token: token
+      properties:
+        email:
+          nullable: true
+          type: string
+        token:
+          nullable: true
+          type: string
+        password:
+          nullable: true
+          type: string
+      type: object
+    StringServiceResponse:
+      additionalProperties: false
+      example:
+        data: data
+        message: message
+        statusCode: 0
+      properties:
+        message:
+          nullable: true
+          type: string
+        statusCode:
+          format: int64
+          type: integer
+        data:
+          nullable: true
+          type: string
+      type: object
+    ThemesModel:
+      additionalProperties: false
+      example:
+        colourName: colourName
+        hashCode: hashCode
+        id: 0
+      properties:
+        id:
+          format: int64
+          type: integer
+        hashCode:
+          nullable: true
+          type: string
+        colourName:
+          nullable: true
+          type: string
+      type: object
+    UpdateEventModel:
+      additionalProperties: false
+      example:
+        eventId: 0
+        eventEndDate: 2000-01-23T04:56:07.000+00:00
+        distance: 6.027456183070403
+        distanceMeasurementId: 1
+        eventEndTime: 2000-01-23T04:56:07.000+00:00
+        eventName: eventName
+        eventStartTime: 2000-01-23T04:56:07.000+00:00
+        eventStartDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        eventId:
+          format: int64
+          type: integer
+        eventName:
+          nullable: true
+          type: string
+        distance:
+          format: double
+          type: number
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        eventStartTime:
+          format: date-time
+          type: string
+        eventEndTime:
+          format: date-time
+          type: string
+        eventStartDate:
+          format: date-time
+          type: string
+        eventEndDate:
+          format: date-time
+          type: string
+      type: object
+    UpdateSongsModel:
+      additionalProperties: false
+      example:
+        duration: duration
+        size: size
+        artist: artist
+        link: link
+        songFilePath: songFilePath
+        id: 0
+        title: title
+      properties:
+        id:
+          format: int64
+          type: integer
+        title:
+          nullable: true
+          type: string
+        artist:
+          nullable: true
+          type: string
+        duration:
+          nullable: true
+          type: string
+        size:
+          nullable: true
+          type: string
+        link:
+          nullable: true
+          type: string
+        songFilePath:
+          nullable: true
+          type: string
+      type: object
+    UserCountModel:
+      additionalProperties: false
+      example:
+        femaleUsers: 1
+        ageUsersBetween18to40: 5
+        totalUsers: 0
+        ageUsersBetween40to70: 5
+        maleUsers: 6
+        ageUsersBetween70to100: 2
+      properties:
+        totalUsers:
+          format: int32
+          type: integer
+        maleUsers:
+          format: int32
+          type: integer
+        femaleUsers:
+          format: int32
+          type: integer
+        ageUsersBetween18to40:
+          format: int32
+          type: integer
+        ageUsersBetween40to70:
+          format: int32
+          type: integer
+        ageUsersBetween70to100:
+          format: int32
+          type: integer
+      type: object
+    UserGearModel:
+      additionalProperties: false
+      example:
+        distanceMeasurementId: 6
+        nickname: nickname
+        maxDistance: 0
+        isRetired: true
+        gearId: 1
+        gearBrandId: 5
+        startDate: 2000-01-23T04:56:07.000+00:00
+      properties:
+        nickname:
+          nullable: true
+          type: string
+        maxDistance:
+          format: int64
+          type: integer
+        distanceMeasurementId:
+          format: int64
+          type: integer
+        isRetired:
+          type: boolean
+        startDate:
+          format: date-time
+          type: string
+        gearId:
+          format: int64
+          type: integer
+        gearBrandId:
+          format: int64
+          type: integer
+      type: object
+    UserRequestModel:
+      additionalProperties: false
+      example:
+        lastName: lastName
+        gender: gender
+        weight: 6.027456183070403
+        language: 9
+        dateOfBirth: 2000-01-23T04:56:07.000+00:00
+        cityId: 2
+        countryID: 5
+        firstName: firstName
+        profilePhoto: profilePhoto
+        age: 1
+        provinceStateId: 7
+        height: 0.8008281904610115
+        group: 5
+      properties:
+        firstName:
+          nullable: true
+          type: string
+        lastName:
+          nullable: true
+          type: string
+        gender:
+          nullable: true
+          type: string
+        height:
+          format: double
+          nullable: true
+          type: number
+        weight:
+          format: double
+          nullable: true
+          type: number
+        profilePhoto:
+          nullable: true
+          type: string
+        age:
+          format: int32
+          type: integer
+        group:
+          format: int32
+          type: integer
+        countryID:
+          format: int64
+          type: integer
+        cityId:
+          format: int64
+          type: integer
+        provinceStateId:
+          format: int64
+          type: integer
+        language:
+          format: int64
+          type: integer
+        dateOfBirth:
+          format: date-time
+          type: string
+      type: object
+    UserResponseModel:
+      additionalProperties: false
+      example:
+        lastName: lastName
+        gender: gender
+        languageId: 7
+        fullName: fullName
+        weight: 6.027456183070403
+        heightMeasurementName: heightMeasurementName
+        dateOfBirth: 2000-01-23T04:56:07.000+00:00
+        cityId: 5
+        languageName: languageName
+        countryID: 5
+        weightMeasurementName: weightMeasurementName
+        provinceStateName: provinceStateName
+        firstName: firstName
+        profilePhoto: profilePhoto
+        cityName: cityName
+        contactNumber: contactNumber
+        countryName: countryName
+        email: email
+        age: 1
+        provinceStateId: 2
+        height: 0.8008281904610115
+        group: group
+      properties:
+        firstName:
+          nullable: true
+          type: string
+        lastName:
+          nullable: true
+          type: string
+        fullName:
+          nullable: true
+          type: string
+        email:
+          nullable: true
+          type: string
+        contactNumber:
+          nullable: true
+          type: string
+        gender:
+          nullable: true
+          type: string
+        height:
+          format: double
+          nullable: true
+          type: number
+        heightMeasurementName:
+          nullable: true
+          type: string
+        weight:
+          format: double
+          nullable: true
+          type: number
+        weightMeasurementName:
+          nullable: true
+          type: string
+        profilePhoto:
+          nullable: true
+          type: string
+        age:
+          format: int64
+          type: integer
+        group:
+          nullable: true
+          type: string
+        countryID:
+          format: int64
+          type: integer
+        countryName:
+          nullable: true
+          type: string
+        cityId:
+          format: int64
+          type: integer
+        cityName:
+          nullable: true
+          type: string
+        provinceStateId:
+          format: int64
+          type: integer
+        provinceStateName:
+          nullable: true
+          type: string
+        languageId:
+          format: int64
+          type: integer
+        languageName:
+          nullable: true
+          type: string
+        dateOfBirth:
+          format: date-time
+          type: string
+      type: object
+    WeightModel:
+      additionalProperties: false
+      example:
+        unit: unit
+        id: 0
+        weightMeasurementName: weightMeasurementName
+      properties:
+        id:
+          format: int64
+          type: integer
+        weightMeasurementName:
+          nullable: true
+          type: string
+        unit:
+          nullable: true
+          type: string
+      type: object
+  securitySchemes:
+    bearer:
+      description: JWT Authorization header using the Bearer scheme.
+      in: header
+      name: Authorization
+      type: apiKey
+
